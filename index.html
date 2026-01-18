@@ -28,12 +28,30 @@
             width: 90%;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 40px;
         }
 
+        .gif-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gif-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .content {
-            flex: 1;
+            text-align: center;
         }
 
         h1 {
@@ -56,6 +74,7 @@
             justify-content: center;
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 4px 12px rgba(137, 207, 240, 0.4);
+            margin: 0 auto;
         }
 
         .play-btn:hover {
@@ -72,34 +91,17 @@
             border-bottom: 10px solid transparent;
             margin-left: 4px;
         }
-
-        .gif-container {
-            width: 200px;
-            height: 200px;
-            border-radius: 16px;
-            overflow: hidden;
-            background: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .gif-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
     </style>
 </head>
 <body>
     <div class="card">
-        <div class="content">
-            <h1>Welcome,<br>Marry Nicole</h1>
-            <button class="play-btn" onclick="handleYes()"></button>
-        </div>
         <div class="gif-container">
             <!-- Replace with your GIF URL -->
             <img src="https://i.pinimg.com/originals/96/c7/b0/96c7b05e64248b96016579e65b978f8d.gif" alt="Animation">
+        </div>
+        <div class="content">
+            <h1>Welcome,<br>Marry Nicole</h1>
+            <button class="play-btn" onclick="handleYes()"></button>
         </div>
     </div>
 
