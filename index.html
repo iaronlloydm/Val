@@ -20,6 +20,30 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
+
+        @keyframes expandIn {
+            from {
+                max-width: 450px;
+                padding: 60px 80px;
+            }
+            to {
+                max-width: 600px;
+                padding: 60px;
+            }
+        }
+
+
+        @keyframes shrinkOut {
+            from {
+                max-width: 600px;
+                padding: 60px;
+            }
+            to {
+                max-width: 450px;
+                padding: 60px 80px;
+            }
+        }
+
         .card {
             background: white;
             border-radius: 24px;
@@ -31,6 +55,11 @@
             flex-direction: column;
             align-items: center;
             gap: 40px;
+            animation: expandIn 0.5s ease-out;
+        }
+
+        .card.exiting {
+            animation: shrinkOut 0.5s ease-in-out forwards;
         }
 
         .gif-container {
@@ -94,9 +123,8 @@
     </style>
 </head>
 <body>
-    <div class="card">
+    <div class="card" id="card">
         <div class="gif-container">
-            <!-- Replace with your GIF URL -->
             <img src="https://i.pinimg.com/originals/96/c7/b0/96c7b05e64248b96016579e65b978f8d.gif" alt="Animation">
         </div>
         <div class="content">
@@ -107,11 +135,14 @@
 
     <script>
         function handleYes() {
-            window.location.href = 'page-two.html';
+            const card = document.getElementById('card');
+            card.classList.add('exiting');
+            
+        
+            setTimeout(() => {
+                window.location.href = 'page-two.html';
+            }, 400);
         }
-
     </script>
-
 </body>
 </html>
-
