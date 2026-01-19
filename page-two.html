@@ -17,8 +17,50 @@
             justify-content: center;
             align-items: center;
             background: radial-gradient(ellipse at center, #cfecf7 0%, #1a0a14 100%);
-            background: radial-gradient(ellipse at center,  0%, #1a0a14 100%);
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        @keyframes expandIn {
+            from {
+                max-width: 350px;
+                padding: 50px 60px;
+            }
+            to {
+                max-width: 450px;
+                padding: 60px 80px;
+            }
+        }
+
+        
+        @keyframes shrinkOut {
+            from {
+                max-width: 450px;
+                padding: 60px 80px;
+            }
+            to {
+                max-width: 350px;
+                padding: 50px 60px;
+            }
+        }
+
+       
+        @keyframes fadeInContent {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes fadeOutContent {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
         }
 
         .modal {
@@ -29,6 +71,24 @@
             width: 90%;
             position: relative;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: expandIn 0.5s ease-out;
+        }
+
+        .modal.exiting {
+            animation: shrinkOut 0.5s ease-in-out forwards;
+        }
+
+        .modal .title1,
+        .modal .title2,
+        .modal .button-group {
+            animation: fadeInContent 0.3s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        .modal.exiting .title1,
+        .modal.exiting .title2,
+        .modal.exiting .button-group {
+            animation: fadeOutContent 0.2s ease-out forwards;
         }
 
         .close-btn {
@@ -58,7 +118,7 @@
             text-align: center;
             line-height: 1.3;
             color: #1a1a1a;
-            font-weight:1000;
+            font-weight: 1000;
             margin-bottom: 20px;
         }
 
@@ -107,7 +167,7 @@
     </style>
 </head>
 <body>
-    <div class="modal">
+    <div class="modal" id="modal">
         <h1 class="title1">This is an important question</h1>
         <h2 class="title2">so make sure you answer >ᴗ<</h2>
         <div class="button-group">
@@ -117,9 +177,13 @@
 
     <script>
         function handleYes() {
-            window.location.href = 'main.html';
+            const modal = document.getElementById('modal');
+            modal.classList.add('exiting');
+            
+            setTimeout(() => {
+                window.location.href = 'page-three.html';
+            }, 500);
         }
-
     </script>
 </body>
 </html>
