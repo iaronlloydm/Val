@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stay Tuned!!</title>
+    <title>My Page</title>
     <style>
         * {
             margin: 0;
@@ -13,84 +14,41 @@
 
         body {
             min-height: 100vh;
+            background-image: url('bgmain.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: radial-gradient(ellipse at center, white 0%, white 70%, #6b1835 100%);
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            padding: 40px 20px;
         }
 
-        .gif-placeholder {
-            width: 500px;
-            height: 500px;
+        .content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 60px;
             border-radius: 20px;
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 40px;
-            margin-right: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
 
-        .gif-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 18px;
+        h1 {
+            font-size: 36px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
         }
 
-        .home-btn {
-            padding: 16px 48px;
-            background: linear-gradient(135deg, #8b2447 0%, #6b1835 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
+        p {
             font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 12px rgba(139, 36, 71, 0.4);
-            margin-bottom: 60px;
-        }
-
-        .home-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(137, 207, 240, 0.6);
-        }
-
-        .home-btn:active {
-            transform: translateY(-1px);
-        }
-
-        .note {
             color: #4a4a4a;
-            font-size: 16px;
-            font-style: italic;
-            opacity: 0.7;
         }
     </style>
 </head>
 <body>
-    <div class="gif-placeholder">
-        <!-- Replace with your GIF URL -->
-        <img src="https://art.pixilart.com/sr28d2bd8b0bdaws3.gif" alt="Coming Soon">
+    <div class="content">
+        <h1>Welcome!</h1>
+        <p>Your content goes here</p>
     </div>
-    
-    <button class="home-btn" onclick="goHome()">Return to Home</button>
-    
-    <p class="note">Stay tuned. Be back here in February 14th 😊</p>
-
-    <script>
-        function goHome() {
-            window.location.href = 'index.html';
-        }
-    </script>
 </body>
-
 </html>
-
-
-
