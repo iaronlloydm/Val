@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerary for FEB17TH</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            gap: 0;
+        }
+
+        .section {
+            position: relative;
+            flex: 1;
+            height: 100%;
+            overflow: hidden;
+            cursor: pointer;
+            transition: flex 0.3s ease;
+            margin: 0;
+            border: none;
+            margin-left: -2px;
+        }
+
+        .section:first-child {
+            margin-left: 0;
+        }
+
+        .section:hover {
+            flex: 1.1;
+        }
+
+        .section-inner {
+            position: absolute;
+            width: 101%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px);
+            transition: filter 0.5s ease;
+            left: -0.5%;
+        }
+
+        .section.revealed .section-inner {
+            filter: blur(0px);
+        }
+
+        /* Vertical sections */
+        .section:nth-child(1) .section-inner {
+            background-color: #c1440e;
+            background-image: url('https://gttp.images.tshiftcdn.com/391991/x/0/dessert-museum.jpg');
+        }
+
+        .section:nth-child(2) .section-inner {
+            background-color: #999;
+            background-image: url('https://mybus-ap.com/hs-fs/hubfs/Timewitch/TW%20%E3%83%95%E3%82%A3%E3%83%AA%E3%83%94%E3%83%B3/PHL-02-25-0412/PHL-02-25-0412-000%20%E6%96%BD%E8%A8%AD%E5%A4%96%E8%A6%B3.jpg?width=400&height=533&name=PHL-02-25-0412-000%20%E6%96%BD%E8%A8%AD%E5%A4%96%E8%A6%B3.jpg');
+        }
+
+        .section:nth-child(3) .section-inner {
+            background-color: #7c3aed;
+            background-image: url('https://i.redd.it/bv6nka7t52d61.jpg');
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .section.revealed .overlay {
+            opacity: 1;
+        }
+
+        .text-content {
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            max-width: 80%;
+        }
+
+        .text-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .text-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .return-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 30px;
+            background: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: transform 0.2s ease;
+        }
+
+        .return-btn:hover {
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        .return-btn:active {
+            transform: translateX(-50%) scale(0.95);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .text-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section" onclick="revealSection(this)">
+            <div class="section-inner"></div>
+            <div class="overlay">
+                <div class="text-content">
+                    <h2>The Dessert Museum</h2>
+                    <p>February 14, 01:00PM <br> Sana walang langgam :3</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" onclick="revealSection(this)">
+            <div class="section-inner"></div>
+            <div class="overlay">
+                <div class="text-content">
+                    <h2>Gala Food Park</h2>
+                    <p>February 14, 03:00PM <br>Arigathanks, konnichiwassup?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" onclick="revealSection(this)">
+            <div class="section-inner"></div>
+            <div class="overlay">
+                <div class="text-content">
+                    <h2>MOA / Seaside</h2>
+                    <p>February 14, 05:00PM<br>Langoy tayo pauwi, pwede?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="return-btn" onclick="homereturn()">Return</button>
+
+    <script>
+        function revealSection(element) {
+            element.classList.toggle('revealed');
+        }
+
+        function homereturn() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
