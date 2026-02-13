@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stay Tuned!!</title>
+    <title>Loading Itinerary</title>
     <style>
         * {
             margin: 0;
@@ -54,11 +54,12 @@
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 4px 12px rgba(139, 36, 71, 0.4);
             margin-bottom: 60px;
+            margin-top: 30px;
         }
 
         .home-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(137, 207, 240, 0.6);
+            box-shadow: 0 8px 25px #6b1835;
         }
 
         .home-btn:active {
@@ -67,10 +68,11 @@
 
         .note {
             color: #4a4a4a;
-            font-size: 16px;
+            font-size: 20px;
             font-style: italic;
             opacity: 0.7;
         }
+
     </style>
 </head>
 <body>
@@ -79,19 +81,13 @@
         <img src="https://art.pixilart.com/sr28d2bd8b0bdaws3.gif" alt="Coming Soon">
     </div>
     
-    <button class="home-btn" onclick="goHome()">Return to Home</button>
-    
-    <p class="note">Stay tuned. Be back here in February 14th 😊</p>
+    <p class="note">Loading Itinerary for February 14th 😊</p>
 
     <script>
-        function goHome() {
-            window.location.href = 'index.html';
-        }
+        setTimeout(function() {
+        window.location.href = 'endpage.html';
+        }, 8000);
     </script>
 </body>
 
 </html>
-
-
-
-
