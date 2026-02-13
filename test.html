@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentines Day!!!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(ellipse at center, white 0%, white 70%, #6b1835 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 40px 20px;
+        }
+
+        .gif-placeholder {
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            margin-right: 20px;
+        }
+
+        .gif-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .home-btn {
+            padding: 16px 48px;
+            background: linear-gradient(135deg, #8b2447 0%, #6b1835 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(139, 36, 71, 0.4);
+            margin-bottom: 60px;
+            margin-top: 30px;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px #6b1835;
+        }
+
+        .home-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .note {
+            color: #4a4a4a;
+            font-size: 20px;
+            font-style: italic;
+            opacity: 0.7;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="gif-placeholder">
+        <!-- Replace with your GIF URL -->
+        <img src="https://i.pinimg.com/736x/4d/68/31/4d6831e05d2998583a57b9293d3daa06.jpg" alt="Coming Soon">
+    </div>
+    
+    <p class="note">Happy Valentines Day, Coline 💐<br> - Ronron ❤︎⁠</p>
+
+    <script>
+        setTimeout(function() {
+        window.location.href = 'details.html';
+        }, 8000);
+    </script>
+</body>
+
+</html>
